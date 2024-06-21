@@ -1,8 +1,9 @@
 name: Staging
+run-name: "${{ contains(github.head_ref, 'feature/') && 'Feature' || contains(github.head_ref, 'bugfix/') && 'Bugfix' || 'Update' }}: ${{ github.head_ref }} by @${{ github.actor }}"
 on:
-    push:
-        branches:
-        - main
+  push:
+      branches:
+      - main
 jobs:
   ci:
     name: CI - Build and Test

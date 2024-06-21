@@ -1,7 +1,8 @@
 name: Production
+run-name: "Release ${{ github.ref_name }} by @${{ github.actor }}"
 on:
-    push:
-      tags: [ 'v*.*.*' ]
+  push:
+    tags: [ 'v*.*.*' ]
 
 jobs:
   ci:
